@@ -7,19 +7,18 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
-  onAuthStateChanged
+  onAuthStateChanged,
 } from 'firebase/auth';
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyA0u5d8iHSo0htRg4JXiS_5mcIni-0UNH8",
-    authDomain: "clothing-webapp-7c81d.firebaseapp.com",
-    projectId: "clothing-webapp-7c81d",
-    storageBucket: "clothing-webapp-7c81d.appspot.com",
-    messagingSenderId: "82514020177",
-    appId: "1:82514020177:web:d26545c589e936416df570"
-  };
+  apiKey: 'AIzaSyDDU4V-_QV3M8GyhC9SVieRTDM4dbiT0Yk',
+  authDomain: 'crwn-clothing-db-98d4d.firebaseapp.com',
+  projectId: 'crwn-clothing-db-98d4d',
+  storageBucket: 'crwn-clothing-db-98d4d.appspot.com',
+  messagingSenderId: '626766232035',
+  appId: '1:626766232035:web:506621582dab103a4d08d6',
+};
 
 const firebaseApp = initializeApp(firebaseConfig);
 
@@ -80,6 +79,5 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 
 export const signOutUser = async () => await signOut(auth);
 
-export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth, callback);
-
-
+export const onAuthStateChangedListener = (callback) =>
+  onAuthStateChanged(auth, callback);
